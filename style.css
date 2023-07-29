@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+/* resets */
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+
+  --danger: hsl(28, 97%, 48%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  font-size: 1.6rem;
+  background: var(--light-grayish-cyan);
+  color: var(--dark-grayish-cyan);
+}
+
+input {
+  border: 2px solid transparent;
+  font: inherit;
+  border-radius: 1rem;
+  font-size: 2.4rem;
+  width: 100%;
+  background-color: var(--very-light-grayish-cyan);
+  padding: 1rem 2rem;
+  color: var(--very-dark-cyan);
+}
+
+input:focus {
+  border: 2px solid transparent;
+  outline: none;
+}
+
+/* remove arrows from number input  */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/*button reset  */
+.btn {
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  font: inherit;
+  font-size: 2.4rem;
+  display: block;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.btn:hover {
+  background: var(--light-grayish-cyan);
+  color: var(--dark-grayish-cyan);
+}
+
+/* header */
+
+header {
+  padding: 6rem 0;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* main content */
+main {
+  background: var(--white);
+  padding: 4rem 0;
+  border-top-left-radius: 2.4rem;
+  border-top-right-radius: 2.4rem;
+  padding: 2rem;
+  max-width: 102.4rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+.form_flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.people_input,
+.bill_input {
+  background-repeat: no-repeat;
+  background-position: 2rem;
+  text-align: right;
+  margin-bottom: 4rem;
+}
+
+.bill_input {
+  background-image: url(images/icon-dollar.svg);
+}
+.people_input {
+  background-image: url(images/icon-person.svg);
+  margin-bottom: 3.2rem;
+}
+
+.tips {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.tip_btn {
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+}
+
+.custom_input {
+  text-align: right;
+}
+
+.custom_input::placeholder {
+  text-align: center;
+  color: var(--grayish-cyan);
+}
+
+/* prices */
+
+.prices {
+  padding: 4rem 3rem 3rem;
+  border-radius: 1rem;
+  background-color: var(--very-dark-cyan);
+}
+
+.price_tip,
+.price_total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.prices h3 {
+  color: var(--white);
+  font-size: 1.6rem;
+}
+
+.prices span {
+  display: block;
+  font-size: 1.2rem;
+  color: var(--grayish-cyan);
+}
+
+.price_tip_amount,
+.price_total_amount {
+  color: var(--primary);
+  font-size: 3.6rem;
+}
+
+.reset_btn {
+  margin-top: 4rem;
+  background: var(--primary);
+  color: var(--very-dark-cyan);
+  width: 100%;
+}
+
+.reset_btn:disabled {
+  background-color: var(--grayish-cyan);
+}
+
+.reset_btn:hover {
+  background-color: var(--light-grayish-cyan);
+}
+
+/* special classes for JS */
+.active {
+  background: var(--primary);
+}
+.danger {
+  border: 2px solid var(--danger);
+}
+
+.danger:focus {
+  border: 2px solid var(--danger);
+}
+
+.success {
+  border: 2px solid var(--primary);
+}
+
+.error {
+  color: var(--danger);
+}
+
+.success:focus {
+  border: 2px solid var(--primary);
+}
+
+/* media query */
+@media (min-width: 960px) {
+  body {
+    display: grid;
+    place-content: center;
+    padding-bottom: 10rem;
+  }
+
+  header {
+    padding: 12rem 0 10rem;
+    text-align: center;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.2rem;
+    padding: 3.2rem;
+    border-radius: 2rem;
+  }
+
+  .tips {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .people_input {
+    margin-bottom: 0;
+  }
+
+  /* make prices flex so that we can use margin-top auto for reset button */
+  .prices {
+    padding: 5rem 4rem 4rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .reset_btn {
+    margin-top: auto;
+  }
+}

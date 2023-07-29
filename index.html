@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <img
+          src="https://res.cloudinary.com/dxrmjc5ai/image/upload/v1690359413/logo_ac63eg.svg"
+          alt="logo"
+        />
+      </h1>
+    </header>
+    <main>
+      <div>
+        <div class="form_flex">
+          <h2>Bill</h2>
+          <p class="error bill_error"></p>
+        </div>
+        <input
+          type="number"
+          onkeypress="return event.charCode >= 46 && event.charCode <= 57"
+          class="bill_input"
+        />
+        <div class="form_flex">
+          <h2 style>Select Tip %</h2>
+        </div>
+        <div class="tips">
+          <button class="btn tip_btn">5%</button>
+          <button class="btn tip_btn">10%</button>
+          <button class="btn tip_btn">15%</button>
+          <button class="btn tip_btn">25%</button>
+          <button class="btn tip_btn">50%</button>
+          <input
+            type="number"
+            onkeypress="return event.charCode >= 46 && event.charCode <= 57"
+            placeholder="Custom"
+            class="custom_input"
+          />
+        </div>
+        <div class="form_flex">
+          <h2>Number of People</h2>
+          <p class="error people_error"></p>
+        </div>
+        <input
+          type="number"
+          min="1"
+          step="1"
+          onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+          title="Numbers only"
+          class="people_input"
+        />
+      </div>
+
+      <article class="prices">
+        <div class="price_tip">
+          <h3>
+            Total Tip
+            <span>/ person</span>
+          </h3>
+          <p class="price_tip_amount">$0.00</p>
+        </div>
+        <div class="price_total">
+          <h3>Total Amount <span>/ person</span></h3>
+          <p class="price_total_amount">$0.00</p>
+        </div>
+
+        <button class="btn reset_btn" disabled>RESET</button>
+      </article>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
